@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(201, 109, 216, 0.2), rgba(107, 142, 255, 0.2));
+  background: transparent;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -137,7 +137,7 @@
 }
 
 .info-banner {
-  background: linear-gradient(135deg, rgba(0, 201, 167, 0.1), rgba(107, 142, 255, 0.1));
+  background: transparent;
   padding: 3rem 2rem;
   margin-top: 3rem;
 }
