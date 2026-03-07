@@ -93,6 +93,27 @@
   gap: 1.1rem;
 }
 
+.chaos-grid {
+  grid-auto-flow: dense;
+}
+
+.chaos-grid .product-card.chaos-1,
+.chaos-grid .product-card.chaos-4 {
+  transform: rotate(0.8deg);
+}
+
+.chaos-grid .product-card.chaos-2 {
+  transform: rotate(-0.8deg);
+}
+
+.chaos-grid .product-card.chaos-3 {
+  grid-column: span 2;
+}
+
+.chaos-grid .product-card.chaos-4 {
+  grid-row: span 2;
+}
+
 .no-products {
   text-align: center;
   padding: 2.5rem 1rem;
@@ -130,5 +151,11 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 0.8rem;
+  }
+
+  .chaos-grid .product-card.chaos-3,
+  .chaos-grid .product-card.chaos-4 {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
