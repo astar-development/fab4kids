@@ -11,14 +11,15 @@ const ProductDetail = () => {
   const [addedToCart, setAddedToCart] = useState(false);
 
   const product = products.find(p => p.id === parseInt(id));
+  const isDigital = product?.category === 'Worksheet Packs' || product?.name.includes('(Digital)');
 
   if (!product) {
     return (
       <div className="product-detail-page">
         <div className="not-found">
-          <h2>Product Not Found</h2>
-          <p>Sorry, we couldn't find the product you're looking for.</p>
-          <Link to="/products" className="back-link">Browse All Products</Link>
+          <h2>Item Not Found</h2>
+          <p>Sorry, we couldn't find the worksheet or material you requested.</p>
+          <Link to="/products" className="back-link">Browse Catalogue</Link>
         </div>
       </div>
     );
@@ -45,7 +46,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-page">
-      <Link to="/products" className="back-link">← Back to Products</Link>
+      <Link to="/products" className="back-link">← Back to Catalogue</Link>
 
       <div className="product-detail">
         <div className="product-image-section">
@@ -70,7 +71,7 @@ const ProductDetail = () => {
           </div>
 
           <div className="description">
-            <h3>Product Description</h3>
+            <h3>Item Description</h3>
             <p>{product.description}</p>
           </div>
 
@@ -86,24 +87,24 @@ const ProductDetail = () => {
               </div>
 
               <button onClick={handleAddToCart} className="add-to-basket-btn">
-                Add to Basket - £{(product.price * quantity).toFixed(2)}
+                {isDigital ? 'Add Download Pack' : 'Add to Basket'} - £{(product.price * quantity).toFixed(2)}
               </button>
 
               {addedToCart && (
                 <div className="added-notification">
-                  ✓ Added to basket!
+                  Added successfully.
                 </div>
               )}
             </div>
           )}
 
           <div className="product-features">
-            <h3>Key Features</h3>
+            <h3>Highlights</h3>
             <ul>
-              <li>Safe and non-toxic materials</li>
-              <li>Meets UK safety standards</li>
-              <li>Educational and engaging</li>
-              <li>Durable construction</li>
+              <li>{isDigital ? 'Instant downloadable format' : 'Classroom-ready physical construction'}</li>
+              <li>Aligned with Montessori-style learning sequences</li>
+              <li>Age-appropriate presentation guidance</li>
+              <li>Suitable for home and school use</li>
               <li>Perfect for age group: {product.ageGroup}</li>
             </ul>
           </div>
@@ -112,7 +113,7 @@ const ProductDetail = () => {
 
       {relatedProducts.length > 0 && (
         <div className="related-products">
-          <h2>You May Also Like</h2>
+          <h2>Related Materials</h2>
           <div className="related-grid">
             {relatedProducts.map(relatedProduct => (
               <Link 
