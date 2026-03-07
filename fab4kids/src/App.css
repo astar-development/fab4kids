@@ -76,50 +76,49 @@ body.rainbow-spots .app::after {
   z-index: -2;
   pointer-events: none;
   opacity: 0.95;
-  background: conic-gradient(
-    from 180deg at 50% 100%,
-    #ff0000 0%,
-    #ff7f00 14.285%,
-    #ffff00 28.57%,
-    #00c853 42.855%,
-    #0091ff 57.14%,
-    #3d5afe 71.425%,
-    #8e24aa 85.71%,
-    #ff0000 100%
+  background: radial-gradient(
+    circle at 50% 100%,
+    transparent 0 54%,
+    #ff0000 54% 58%,
+    #ff7f00 58% 62%,
+    #ffff00 62% 66%,
+    #00c853 66% 70%,
+    #0091ff 70% 74%,
+    #3d5afe 74% 78%,
+    #8e24aa 78% 82%,
+    transparent 82% 100%
   );
-  -webkit-mask: radial-gradient(circle at 50% 100%, transparent 56%, #000 57% 70%, transparent 71%);
-  mask: radial-gradient(circle at 50% 100%, transparent 56%, #000 57% 70%, transparent 71%);
 }
 
 body.rainbow-spots::before {
   width: 300px;
   height: 300px;
-  top: 8%;
-  left: 6%;
+  top: var(--arc1-top, 8%);
+  left: var(--arc1-left, 6%);
   transform: rotate(-8deg);
 }
 
 body.rainbow-spots::after {
   width: 350px;
   height: 350px;
-  top: 30%;
-  right: 4%;
+  top: var(--arc2-top, 30%);
+  right: var(--arc2-right, 4%);
   transform: rotate(12deg);
 }
 
 body.rainbow-spots .app::before {
   width: 260px;
   height: 260px;
-  bottom: 18%;
-  left: 22%;
+  bottom: var(--arc3-bottom, 18%);
+  left: var(--arc3-left, 22%);
   transform: rotate(6deg);
 }
 
 body.rainbow-spots .app::after {
   width: 320px;
   height: 320px;
-  bottom: 2%;
-  right: 16%;
+  bottom: var(--arc4-bottom, 2%);
+  right: var(--arc4-right, 16%);
   transform: rotate(-10deg);
 }
 
