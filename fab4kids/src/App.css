@@ -1,0 +1,186 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 0;
+}
+
+/* Rainbow Spots Theme */
+body.rainbow-spots {
+  background-color: #FFFDD0;
+  position: relative;
+}
+
+body.rainbow-spots::before,
+body.rainbow-spots::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body.rainbow-spots::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #FF6B9D, #C96DD8);
+  top: 10%;
+  right: 15%;
+  animation: float1 20s ease-in-out infinite;
+}
+
+body.rainbow-spots::after {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #6B8EFF, #00C9A7);
+  bottom: 20%;
+  left: 10%;
+  animation: float2 25s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 40px) scale(0.9);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 50px) scale(0.9);
+  }
+  66% {
+    transform: translate(60px, -40px) scale(1.1);
+  }
+}
+
+/* Additional rainbow spots */
+.main-content::before,
+.main-content::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body.rainbow-spots .main-content::before {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #FFD700, #FF6B9D);
+  top: 40%;
+  left: 5%;
+  animation: float3 30s ease-in-out infinite;
+}
+
+body.rainbow-spots .main-content::after {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #00C9A7, #6B8EFF);
+  top: 60%;
+  right: 8%;
+  animation: float4 22s ease-in-out infinite;
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, -50px) rotate(180deg);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40px, 30px) rotate(-180deg);
+  }
+}
+
+/* Rainbow Gradient Theme */
+body.rainbow-gradient {
+  background: radial-gradient(
+    circle at center,
+    #FFFDD0 0%,
+    #FFE8F0 20%,
+    #F0E8FF 40%,
+    #E8F0FF 60%,
+    #E8F9F5 80%,
+    #FFFDD0 100%
+  );
+  background-attachment: fixed;
+  position: relative;
+  animation: gradientShift 30s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+body.rainbow-gradient::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 0%,
+    rgba(255, 107, 157, 0.1) 25%,
+    rgba(201, 109, 216, 0.1) 50%,
+    rgba(107, 142, 255, 0.1) 75%,
+    transparent 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Ensure content is always readable */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  body.rainbow-spots::before,
+  body.rainbow-spots::after,
+  .main-content::before,
+  .main-content::after {
+    display: none;
+  }
+}
