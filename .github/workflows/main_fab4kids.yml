@@ -47,6 +47,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          path: site
+
+      - name: Verify deployment package contents
+        run: ls -la site
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -61,5 +65,6 @@ jobs:
         with:
           app-name: 'fab4kids'
           slot-name: 'Production'
-          package: .
+          package: site
+          startup-command: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
           
