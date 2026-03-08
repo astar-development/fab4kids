@@ -29,9 +29,9 @@ const Header = () => {
             onClick={toggleTheme}
             className="theme-toggle"
             aria-label="Toggle colour theme"
-            title={theme === 'rainbow-spots' ? 'Switch to Rainbow Gradient Theme' : 'Switch to Rainbow Arcs Theme'}
+            title={theme === 'rainbow-spots' ? 'Switch to Rainbow Gradient Theme' : 'Switch to Rainbow Theme'}
           >
-            {theme === 'rainbow-spots' ? '🌈 Gradient' : '🌈 Arcs'}
+            {theme === 'rainbow-spots' ? '🌈 Gradient' : '🌈 Rainbows'}
           </button>
 
           <Link to="/cart" className="cart-link">
