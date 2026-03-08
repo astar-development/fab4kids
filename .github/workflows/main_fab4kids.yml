@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'fab4kids'
           slot-name: 'Production'
-          package: dist
+          package: .
           
