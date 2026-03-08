@@ -31,7 +31,7 @@ const Header = () => {
             aria-label="Toggle colour theme"
             title={theme === 'rainbow-spots' ? 'Switch to Rainbow Gradient Theme' : 'Switch to Rainbow Theme'}
           >
-            {theme === 'rainbow-spots' ? '🌈 Gradient' : '🌈 Rainbows'}
+            {theme === 'rainbow-spots' ? '🌈 Switch to Gradient' : '🌈 Switch to Rainbows'}
           </button>
 
           <Link to="/cart" className="cart-link">
