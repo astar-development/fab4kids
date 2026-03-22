@@ -16,7 +16,7 @@ jobs:
       contents: read #This is required for actions/checkout
     defaults:
       run:
-        working-directory: apps/web/fab4kids
+        working-directory: .
 
     steps:
       - uses: actions/checkout@v4
