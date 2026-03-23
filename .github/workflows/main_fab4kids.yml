@@ -52,4 +52,4 @@ jobs:
           app-name: 'fab4kids'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EA3AC68661324048A2418AF6F3747EE4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_30A7893EAF2D4593B54B7ACFE4926151 }}
